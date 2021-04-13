@@ -1,28 +1,31 @@
-<?php require "./crud/user.php";
+<?php require "./crud/group.php";
 // if(!isset( $_GET["id"])){
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
-$teachers = new User();
-$data = $teachers->getUser($_GET["id"]);
 
 // if ($data === null){
 //     echo "sorry this id doesn't exist in user table";
 //     die;
 // }
+$group = new Group();
+$data = $group->getGroupBytId($_GET["id"]);
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // $user = new User();
+    $result = $group->updateGroup($_POST ,$_GET["id"] );
+    header('Location:view-edit-groups.php?id='.$_GET["id"].'');
+}
 ?>
-
- 
 <!doctype html>
 
 <html class="no-js" lang="en">
-
+<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student details</title>
-    <meta name="description" content="student details">
+    <title>student Edit</title>
+    <meta name="description" content="student Edit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -67,7 +70,7 @@ $data = $teachers->getUser($_GET["id"]);
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Detailed Teacher info</h1>
+                        <h1>Detailed course info</h1>
                     </div>
                 </div>
             </div>
@@ -76,8 +79,9 @@ $data = $teachers->getUser($_GET["id"]);
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li><a href="view-edit-teachers.php">Teachers data</a></li>
-                            <li class="active">Detailed Teacher info</li>
+                            <li><a href="view-edit-groups.php">Groups data</a></li>
+                            <li><a href='group-detailed.php?id=<?php echo $_GET["id"]?>'>More actions</a></li>
+                            <li class=" active">Edit group data</li>
                         </ol>
                     </div>
                 </div>
@@ -86,44 +90,47 @@ $data = $teachers->getUser($_GET["id"]);
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Detailed info</strong>
                             </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12 row">
-                                        <span class="col-4">Teacher ID</span>
+                                <form method="post" class="row">
+                                    <div class="col-md-6 m-5 row align-items-center">
+                                        <span class="col-6 ">Course ID</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
-                                        <span class="col-4"> name</span>
-                                        <span class="col-6"><?php echo $data["name"];
-                                        ?></span>
                                         
-                                        <span class="col-4">Email</span>
-                                        <span class="col-6"><?php echo $data["email"];
-                                        ?></span>
-                                    </div>
-                                    <div class="col-md-12 row">
-                                       
-                                        <span class="col-4">Creation date</span>
-                                        <span class="col-6"><?php echo $data["created_at"];
-                                        ?></span>
-                                        <span class="col-4">Last modification date</span>
-                                        <span class="col-6"><?php echo $data["updated_at"];
-                                        ?></span>
+                                        <label class="col-6 " for="description">Description</label>
+                                        <input type="text" name="description" id="description" value="<?php echo $data["description"];?>">
 
+                                        <label class="col-6 " for="max_no_student">Max Number Of Student</label>
+                                        <input type="text" name="max_no_student" id="max_no_student" value="<?php echo $data["max_no_student"];?>">
+
+                                        <label class="col-6 " for="start_date">Start Date</label>
+                                        <input type="date" name="start_date" id="start_date" value="<?php echo $data["start_date"];?>">
+
+                                        <label class="col-6 " for="end_date">End Date</label>
+                                        <input type="date" name="end_date" id="end_date" value="<?php echo $data["end_date"];?>">
+
+                                        <label class="col-6 " for="start_time">Start Time</label>
+                                        <input type="time" name="start_time" id="start_time" value="<?php echo $data["start_time"];?>">
+
+                                        <label class="col-6 " for="end_time">end_time</label>
+                                        <input type="time" name="end_time" id="end_time" value="<?php echo $data["end_time"];?>">
+
+                                        <label class="col-6 " for="no_lec">Number Of Lectures</label>
+                                        <input type="number" name="no_lec" id="no_lec" value="<?php echo $data["no_lec"];?>">
+
+                                        <label class="col-6 " for="price">Price</label>
+                                        <input type="number" name="price" id="price" value="<?php echo $data["price"];?>">
                                     </div>
+                                  
                                     <span class="col-12 text-right">
-                                        <a href="teacher-edit.php?id=<?php echo $data["id"] ?>"
-                                            class="btn btn-warning ml-auto">Edit
-                                            teacher</a>
-                                        <a href="teacher-delete.php?id=<?php echo $data["id"]?>" class=" btn
-                                            btn-danger">Delete teacher</a>
+                                        <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

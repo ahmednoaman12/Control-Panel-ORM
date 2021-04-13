@@ -7,7 +7,7 @@ require 'database_config.php';
 class  Teacher extends Mysqladapter
 {
     //set the table name
-    private $_table = 'users';
+    private $_table = 'teachers';
 
     public function __construct()
     {

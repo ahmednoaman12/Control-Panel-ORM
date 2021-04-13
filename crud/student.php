@@ -7,7 +7,7 @@ require 'database_config.php';
 class  Student extends Mysqladapter
 {
     //set the table name
-    private $_table = 'studednts';
+    private $_table = 'students';
 
     public function __construct()
     {
@@ -26,15 +26,15 @@ class  Student extends Mysqladapter
     }
 
     // select one  student using user id
-    public function getStudentByUsertId($user_id)
+    public function getStudentBytId($user_id)
     {
-        $this->select($this->_table, 'u_id= '.$user_id);
+        $this->select($this->_table, 'id= '.$user_id);
         return $this->fetch();
     }
      // select one  student using student id
     public function getStudentByStudentId($student_id)
     {
-        $this->select($this->_table, 's_id= '.$student_id);
+        $this->select($this->_table, 'id= '.$student_id);
         return $this->fetch();
     }
     // inser user
@@ -45,12 +45,12 @@ class  Student extends Mysqladapter
 
     // update user
     public function updateStudent($user_data,$user_id){
-        return $this->update($this ->_table , $user_data, 'u_id= ' .$user_id);
+        return $this->update($this ->_table , $user_data, 'id= ' .$user_id);
     }
 
     //delete user 
     public function deleteStudent($user_id){
-        return $this->delete($this ->_table ,'u_id= ' . $user_id );
+        return $this->delete($this ->_table ,'id= ' . $user_id );
     }
     //search existing users
     public function searchUsers($keyword)

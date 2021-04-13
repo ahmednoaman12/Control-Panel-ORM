@@ -1,33 +1,27 @@
 <?php
 
-        require "./crud/teacher.php";
+        require "./crud/user.php";
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
         $name = $_POST['name'];
-        // $u_lname = $_POST['u_lname'];
+        
         $email = $_POST['email'];
         $password = $_POST['password'];
-        // $u_confirmPassword = $_POST['u_confirmPassword'];
-        // $u_mobile = $_POST['u_mobile'];
-        // $u_government = $_POST['u_government'];
-        // $u_imagepath = $_POST['u_imagepath'];
+        
 
         $user_data = array("name" => $name,
-                        //    "u_lname" => $u_lname,
                             "email" => $email ,
                             "password" => $password,
-                            //"u_confirmPassword" => $u_confirmPassword,
-                        //    "u_mobile" => $u_mobile,
+
                             "role"=> "teacher",
-                        //    "u_government" => $u_government
-                            //"u_imagepath" => $u_imagepath                    
+                   
                             
                             );
 
                             
 
-        $user = new Teacher();
-        $users = $user->addTeacher($user_data);
+        $user = new User();
+        $users = $user->addUser($user_data);
         header('Location:view-edit-teachers.php');
 
         
@@ -128,28 +122,19 @@
                                         <div class="col-12 col-md-9"><input type="text" id="text-input"
                                         value="<?php (isset($_POST['name'])) ? $_POST['name']:'' ?>"
                                                 name="name" placeholder="First Name" class="form-control"><small
-                                                class="form-text text-muted">Please write first name</small></div>
+                                                class="form-text text-muted">Please write Full name</small></div>
                                     </div>
 
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input"
-                                                class=" form-control-label">Last Name</label>
-                                        </div>
-                                        <div class="col-12 col-md-9"><input type="text" id="text-input"
-                                        value="<?php (isset($_POST['u_lname'])) ? $_POST['u_lname']:'' ?>"
-                                                name="u_lname" placeholder="Last Name" class="form-control"><small
-                                                class="form-text text-muted">Please write last name</small></div>
-                                    </div>
-
+                                   
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="email-input"
                                                 class=" form-control-label">Email</label>
                                         </div>
-                                        <div class="col-12 col-md-9"><input type="email" id="email-input"
-                                        value="<?php (isset($_POST['email'])) ? $_POST['email']:'' ?>"
-                                                name="email" placeholder="Enter Email" class="form-control"><small
-                                                class="help-block form-text">Please
-                                                enter your email</small></div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="email" id="email-input" value="<?php (isset($_POST['email'])) ? $_POST['email']:'' ?>"
+                                            name="email" placeholder="Enter Email" class="form-control">
+                                            <small class="help-block form-text">Please enter your email</small>
+                                        </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="password-input"
@@ -167,8 +152,8 @@
                                                 class="form-control-label">Confirm password</label>
                                         </div>
                                         <div class="col-12 col-md-9"><input type="password" id="Confirm-input"
-                                        value="<?php (isset($_POST['u_confirmPassword'])) ? $_POST['u_confirmPassword']:'' ?>"
-                                                name="u_confirmPassword" placeholder="confirm password"
+                                        value="<?php (isset($_POST['confirmPassword'])) ? $_POST['confirmPassword']:'' ?>"
+                                                name="confirmPassword" placeholder="confirm password"
                                                 class="form-control"><small class="help-block form-text">Please
                                                 enter
                                                 a complex Confirm</small></div>
@@ -179,8 +164,8 @@
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <input type="text" id="disabled-input"
-                                            value="<?php (isset($_POST['u_mobile'])) ? $_POST['u_mobile']:'' ?>"
-                                             name="u_mobile"
+                                            value="<?php (isset($_POST['mobile'])) ? $_POST['mobile']:'' ?>"
+                                             name="mobile"
                                                 class="form-control">
                                         </div>
                                     </div>
@@ -191,22 +176,11 @@
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <input type="text" id="text-input" 
-                                            value="<?php (isset($_POST['u_government'])) ? $_POST['u_government']:'' ?>"
-                                            name="u_government" class="form-control">
+                                            value="<?php (isset($_POST['government'])) ? $_POST['government']:'' ?>"
+                                            name="government" class="form-control">
                                         </div>
                                     </div>
-
-
-
-                                    <!-- <div class="row form-group">
-                                        <div class="col col-md-3"><label for="file-input"
-                                                class=" form-control-label">Image file</label>
-                                        </div>
-                                        <div class="col-12 col-md-9"><input type="file" id="file-input"
-                                        value="<?php (isset($_POST['u_imagepath'])) ? $_POST['u_imagepath']:'' ?>"
-                                                name="u_imagepath" class="form-control-file"></div>
-                                    </div> -->
-                                    <div class="card-footer">
+                            <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-dot-circle-o"></i> Submit
                                 </button>

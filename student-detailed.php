@@ -91,19 +91,19 @@ if ($userData === null){
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6 row">
-                                        <span class="col-6">Student ID</span>
-                                        <span class="col-6"><?php echo $userData["id"];
+                                    <div class="col-md-12 row">
+                                        <span class="col-4">Student ID</span>
+                                        <span class="col-8"><?php echo $userData["id"];
                                         ?></span>
-                                        <span class="col-6"> name</span>
-                                        <span class="col-6"><?php echo $userData["name"];
+                                        <span class="col-4"> name</span>
+                                        <span class="col-8"><?php echo $userData["name"];
                                         ?></span>
                                         
-                                        <span class="col-6">Email</span>
-                                        <span class="col-6"><?php echo $userData["email"];
+                                        <span class="col-4">Email</span>
+                                        <span class="col-8"><?php echo $userData["email"];
                                         ?></span>
                                     </div>
-                                    <div class="col-md-6 row">
+                                    <div class="col-md-12 row">
                                        
                                         <span class="col-6">Creation date</span>
                                         <span class="col-6"><?php echo $userData["created_at"];

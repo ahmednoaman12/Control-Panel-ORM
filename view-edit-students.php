@@ -87,7 +87,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php 
+                                    <?php 
                                             $user = new User();
                                             $allUsers = $user->getUsers();
                                             
@@ -97,8 +97,8 @@
                                                         <td>".$user["id"]."</td>
                                                         <td>".$user["name"]." </td>
                                                         <td>".$user["email"]."</td>
-                                                       
-                                                        <td><a href='student-detailed.php?id=".$user["id"]."'>See More</a></td>
+                                                        
+                                                        <td><a href='student-detailed.php?id=".$user["id"]."'>More actions</a></td>
                                                         </tr>"
                                                     ; 
                                                 }

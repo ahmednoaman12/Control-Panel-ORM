@@ -1,16 +1,16 @@
 <?php require "./crud/user.php";
-if(!isset( $_GET["id"])){
-    echo "Sorry you can't browse this page directly";
-    die;
-};
+// if(!isset( $_GET["id"])){
+//     echo "Sorry you can't browse this page directly";
+//     die;
+// };
 $user = new User();
 $userData = $user->getUser($_GET["id"]);
-if ($userData === null){
-    echo "sorry this id doesn't exist in user table";
-    die;
-}
+// if ($userData === null){
+//     echo "sorry this id doesn't exist in user table";
+//     die;
+// }
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $user = new User();
+    // $user = new User();
     $result = $user->updateUser($_POST ,$_GET["id"] );
     header('Location:student-detailed.php?id='.$_GET["id"].'');
 }
@@ -23,8 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student Edit</title>
-    <meta name="description" content="student Edit">
+    <title>Student Edit</title>
+    <meta name="description" content="teacher Edit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li><a href="view-edit-students.php">Students data</a></li>
+                            <li><a href="view-edit-teachers.php">Students data</a></li>
                             <li><a href='student-detailed.php?id=<?php echo $_GET["id"]?>'>More actions</a></li>
                             <li class=" active">Edit student data</li>
                         </ol>
@@ -98,31 +98,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <form method="post" class="row">
                                     <div class="col-md-6 row align-items-center">
                                         <span class="col-6">Student ID</span>
-                                        <span class="col-6"><?php echo $userData["u_id"];
+                                        <span class="col-6"><?php echo $userData["id"];
                                         ?></span>
-                                        <label class="col-6" for="u_fname">First name</label>
-                                        <input type="text" name="u_fname" id="u_fname" value="<?php echo $userData["u_fname"];
+                                        <label class="col-6" for="name">First name</label>
+                                        <input type="text" name="name" id="name" value="<?php echo $userData["name"];
                                         ?>">
-                                        <label class="col-6" for="u_lname">Last name</label>
-                                        <input type="text" name="u_lname" id="u_lname" value="<?php echo $userData["u_lname"];
+                                        <label class="col-6" for="email">Email</label>
+                                        <input type="text" name="email" id="email" value="<?php echo $userData["email"];
                                         ?>">
-                                        <label class="col-6" for="u_email">Email</label>
-                                        <input type="email" name="u_email" id="u_email" value="<?php echo $userData["u_email"];
-                                        ?>">
+                                        
                                     </div>
-                                    <div class="col-md-6 row align-items-center">
-                                        <label class="col-6" for="u_verified">Verrfied</label>
-                                        <input type="checkbox" name="u_verified" id="u_verified" value="true">
-                                        <span class="col-6">Mobile</span>
-                                        <span class="col-6"><?php echo $userData["u_mobile"];
-                                        ?></span>
-                                        <span class="col-6">Creation date</span>
-                                        <span class="col-6"><?php echo $userData["u_creation_date"];
-                                        ?></span>
-                                        <span class="col-6">Last modification date</span>
-                                        <span class="col-6"><?php echo $userData["modification-date"];
-                                        ?></span>
-                                    </div>
+                                   
                                     <span class="col-12 text-right">
                                         <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>

@@ -1,3 +1,4 @@
+<?php require "./crud/group.php"; ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -84,20 +85,39 @@
                                     <thead>
                                         <tr>
                                             <th>Group ID</th>
-                                            <th>Course</th>
-                                            <th>Teacher</th>
-                                            <th>Enroll Count</th>
-                                            <th>More action</th>
+                                            <th>Group Description</th>
+                                            <th>Group Max Number</th>\
+                                            <th>Group Price</th>
+                                            <th>See More</th>
+                                            <!-- <th>Group Start Date</th>
+                                            <th>Group End Date</th>
+                                            <th>Group Start Time</th>
+                                            <th>Group End Time</th>
+                                            <th>Group Number Of Lecture</th> -->
+                                            
+                                            <!-- <th>Creadted At</th>
+                                            <th>Updated At</th> -->
+                                           
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>199</td>
-                                            <td>Math</td>
-                                            <td>Fady Shaker Shawky</td>
-                                            <td>15</td>
-                                            <td><a href="Group-details.php">More actions</a></td>
-                                        </tr>
+                                    <?php 
+                                            $group = new Group();
+                                            $All_groups = $group->getAllGroup();
+                                            
+                                            foreach($All_groups as $data){
+                                                    echo "<tr>
+                                                        <td>".$data["id"]."</td>
+                                                     
+                                                        <td>".$data["description"]."</td>
+                                                        <td>".$data["max_no_student"]."</td>
+                                                        <td>".$data["price"]."</td>
+                                                        <td><a href='group-detailed.php?id=".$data["id"]."'>See More</a></td>
+                                                        </tr>"
+                                                    ; 
+                                                }
+                                            
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

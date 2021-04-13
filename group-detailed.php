@@ -1,18 +1,15 @@
-<?php require "./crud/user.php";
+<?php require "./crud/group.php";
 // if(!isset( $_GET["id"])){
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
-$teachers = new User();
-$data = $teachers->getUser($_GET["id"]);
-
+$group = new Group();
+$data = $group->getGroupBytId($_GET["id"]);
 // if ($data === null){
 //     echo "sorry this id doesn't exist in user table";
 //     die;
 // }
 ?>
-
- 
 <!doctype html>
 
 <html class="no-js" lang="en">
@@ -21,8 +18,8 @@ $data = $teachers->getUser($_GET["id"]);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student details</title>
-    <meta name="description" content="student details">
+    <title>Group details</title>
+    <meta name="description" content="Group details">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -67,7 +64,7 @@ $data = $teachers->getUser($_GET["id"]);
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Detailed Teacher info</h1>
+                        <h1>Detailed Group info</h1>
                     </div>
                 </div>
             </div>
@@ -76,8 +73,8 @@ $data = $teachers->getUser($_GET["id"]);
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li><a href="view-edit-teachers.php">Teachers data</a></li>
-                            <li class="active">Detailed Teacher info</li>
+                            <li><a href="view-edit-groups.php">Groups data</a></li>
+                            <li class="active">Detailed Groups info</li>
                         </ol>
                     </div>
                 </div>
@@ -94,34 +91,45 @@ $data = $teachers->getUser($_GET["id"]);
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-12 row">
-                                        <span class="col-4">Teacher ID</span>
+                                    <div class="col-md-6 row">
+                                        <span class="col-6">Group ID</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
-                                        <span class="col-4"> name</span>
-                                        <span class="col-6"><?php echo $data["name"];
+                                        <span class="col-6">Start Date</span>
+                                        <span class="col-6"><?php echo $data["start_date"];
                                         ?></span>
+                                    
+                                        <span class="col-6">End Date</span>
+                                        <span class="col-6"><?php echo $data["end_date"];?></span>
                                         
-                                        <span class="col-4">Email</span>
-                                        <span class="col-6"><?php echo $data["email"];
-                                        ?></span>
+
+                                        <span class="col-6">Number Of Lectures</span>
+                                        <span class="col-6"><?php echo $data["no_lec"];?></span>  
+
+
+                                        <span class="col-6">Start Time</span>
+                                        <span class="col-6"><?php echo $data["start_time"];?></span>
+
+                                        <span class="col-6">End Time</span>
+                                        <span class="col-6"><?php echo $data["end_time"];?></span>
+
+                                                                        
                                     </div>
+                                    
                                     <div class="col-md-12 row">
-                                       
-                                        <span class="col-4">Creation date</span>
+                                    <hr>
+                                        <span class="col-6">Creation date</span>
                                         <span class="col-6"><?php echo $data["created_at"];
                                         ?></span>
-                                        <span class="col-4">Last modification date</span>
+                                        <span class="col-6">Last modification date</span>
                                         <span class="col-6"><?php echo $data["updated_at"];
                                         ?></span>
 
                                     </div>
                                     <span class="col-12 text-right">
-                                        <a href="teacher-edit.php?id=<?php echo $data["id"] ?>"
-                                            class="btn btn-warning ml-auto">Edit
-                                            teacher</a>
-                                        <a href="teacher-delete.php?id=<?php echo $data["id"]?>" class=" btn
-                                            btn-danger">Delete teacher</a>
+                                        <a href="group-edit.php?id=<?php echo $data["id"] ?>"
+                                            class="btn btn-warning ml-auto">Edit group</a>
+                                        <a href="group-delete.php?id=<?php echo $data["id"]?>" class=" btn btn-danger">Group course</a>
                                     </span>
                                 </div>
                             </div>
