@@ -1,14 +1,14 @@
 <?php require "./crud/user.php";
-if(!isset( $_GET["id"])){
-    echo "Sorry you can't browse this page directly";
-    die;
-};
+// if(!isset( $_GET["id"])){
+//     echo "Sorry you can't browse this page directly";
+//     die;
+// };
 $user = new User();
 $userData = $user->getUser($_GET["id"]);
-if ($userData === null){
-    echo "sorry this id doesn't exist in user table";
-    die;
-}
+// if ($userData === null){
+//     echo "sorry this id doesn't exist in user table";
+//     die;
+// }
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $user = new User();
     $result = $user->updateUser($_POST ,$_GET["id"] );
@@ -98,31 +98,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <form method="post" class="row">
                                     <div class="col-md-6 row align-items-center">
                                         <span class="col-6">Student ID</span>
-                                        <span class="col-6"><?php echo $userData["u_id"];
+                                        <span class="col-6"><?php echo $userData["id"];
                                         ?></span>
-                                        <label class="col-6" for="u_fname">First name</label>
-                                        <input type="text" name="u_fname" id="u_fname" value="<?php echo $userData["u_fname"];
+                                        <label class="col-6" for="name">First name</label>
+                                        <input type="text" name="name" id="name" value="<?php echo $userData["name"];
                                         ?>">
-                                        <label class="col-6" for="u_lname">Last name</label>
-                                        <input type="text" name="u_lname" id="u_lname" value="<?php echo $userData["u_lname"];
-                                        ?>">
-                                        <label class="col-6" for="u_email">Email</label>
-                                        <input type="email" name="u_email" id="u_email" value="<?php echo $userData["u_email"];
+                                    
+                                        <label class="col-6" for="email">Email</label>
+                                        <input type="email" name="email" id="email" value="<?php echo $userData["email"];
                                         ?>">
                                     </div>
-                                    <div class="col-md-6 row align-items-center">
-                                        <label class="col-6" for="u_verified">Verrfied</label>
-                                        <input type="checkbox" name="u_verified" id="u_verified" value="true">
-                                        <span class="col-6">Mobile</span>
-                                        <span class="col-6"><?php echo $userData["u_mobile"];
-                                        ?></span>
-                                        <span class="col-6">Creation date</span>
-                                        <span class="col-6"><?php echo $userData["u_creation_date"];
-                                        ?></span>
-                                        <span class="col-6">Last modification date</span>
-                                        <span class="col-6"><?php echo $userData["modification-date"];
-                                        ?></span>
-                                    </div>
+                                   
                                     <span class="col-12 text-right">
                                         <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>
