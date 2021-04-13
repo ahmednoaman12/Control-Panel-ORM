@@ -1,14 +1,14 @@
 <?php require "./crud/user.php";
-if(!isset( $_GET["id"])){
-    echo "Sorry you can't browse this page directly";
-    die;
-};
+// if(!isset( $_GET["id"])){
+//     echo "Sorry you can't browse this page directly";
+//     die;
+// };
 $user = new User();
 $userData = $user->getUser($_GET["id"]);
-if ($userData === null){
-    echo "sorry this id doesn't exist in user table";
-    die;
-}
+// if ($userData === null){
+//     echo "sorry this id doesn't exist in user table";
+//     die;
+// }
 ?>
 <!doctype html>
 

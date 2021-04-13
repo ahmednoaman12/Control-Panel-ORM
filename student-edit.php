@@ -103,8 +103,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <label class="col-6" for="name">First name</label>
                                         <input type="text" name="name" id="name" value="<?php echo $userData["name"];
                                         ?>">
+<<<<<<< HEAD
                                         <label class="col-6" for="email">Email</label>
                                         <input type="text" name="email" id="email" value="<?php echo $userData["email"];
+=======
+                                    
+                                        <label class="col-6" for="email">Email</label>
+                                        <input type="email" name="email" id="email" value="<?php echo $userData["email"];
+>>>>>>> d63fa3377ec7b4cfe0d2037c56cdf1a4f79609f8
                                         ?>">
                                         
                                     </div>
