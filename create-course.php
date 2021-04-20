@@ -1,23 +1,29 @@
 <?php
 
-        require "./crud/course.php";
-        if($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        
+require "./crud/course.php";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $briefDescription = $_POST['briefDescription'];
+    $language = $_POST['language'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $whatLearn = $_POST['whatLearn'];
+    $rating = $_POST['rating'];
+    $image = $_POST['image'];
+    $requirements = $_POST['requirements'];
 
-        $data = array("name" => $name,
-                        "description" => $description
-                    );
 
-                            
+    $data = array(
+        "name" => $name, "briefDescription" => $briefDescription, "language" => $language, "price" => $price,
+        "description" => $description, "whatLearn" => $whatLearn, "rating" => $rating, "image" => "physics.jpg", "requirements" => $requirements
+    );
 
-        $course = new Course();
-        $courses = $course->addCourse($data);
-        header('Location:view-edit-courses.php');
-        
-        }
+
+
+    $course = new Course();
+    $courses = $course->addCourse($data);
+    header('Location:view-edit-courses.php');
+}
 
 ?>
 <!doctype html>
@@ -28,7 +34,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>create course</title>
+    <title>Create course</title>
     <meta name="description" content="create course">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,8 +58,8 @@
 <body>
     <!-- start Left Panel -->
     <?php
-            require "menu_left.php";
-        ?>
+    require "menu_left.php";
+    ?>
     <!-- end left-panel -->
 
     <!-- Left Panel -->
@@ -64,8 +70,8 @@
 
         <!-- Start Header-->
         <?php
-                require "header.php";
-            ?>
+        require "header.php";
+        ?>
 
         <!--End Header-->
 
@@ -73,7 +79,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>View & Edit Corses</h1>
+                        <h1>View & edit corses</h1>
                     </div>
                 </div>
             </div>
@@ -96,28 +102,80 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                Add <strong>Courses</strong>
+                                Add course
                             </div>
                             <div class="card-body card-block">
-                            
+
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input"
-                                                class=" form-control-label">Course Name</label>
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Course name</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="name" 
-                                        value="<?php (isset($_POST['name'])) ? $_POST['name']:'' ?>" placeholder="Course Name" class="form-control" required>
+                                            <input type="text" id="text-input" name="name" value="<?php (isset($_POST['name'])) ? $_POST['name'] : '' ?>" placeholder="Course name" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="textarea-input"
-                                                class=" form-control-label">Description</label>
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Brief description</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                        <textarea name="description" id="textarea-input" rows="9" placeholder="Content..." 
-                                        value="<?php (isset($_POST['description'])) ? $_POST['description']:'' ?>" class="form-control"></textarea>
+                                            <textarea name="briefDescription" id="textarea-input" rows="2" placeholder="Content..." value="<?php (isset($_POST['briefDescription'])) ? $_POST['briefDescription'] : '' ?>" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Language</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="language" value="<?php (isset($_POST['language'])) ? $_POST['language'] : '' ?>" placeholder="Course language" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Price</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="number" id="text-input" name="price" min=5 value="<?php (isset($_POST['price'])) ? $_POST['price'] : '' ?>" placeholder="0.00" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="description" id="textarea-input" rows="9" placeholder="Content..." value="<?php (isset($_POST['description'])) ? $_POST['description'] : '' ?>" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">What learn</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="whatLearn" id="textarea-input" rows="2" placeholder="Content..." value="<?php (isset($_POST['whatLearn'])) ? $_POST['whatLearn'] : '' ?>" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Rating</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="number" id="text-input" name="rating" min=0 max=5 value="<?php (isset($_POST['rating'])) ? $_POST['rating'] : '' ?>" placeholder="***" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Upload image</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" name="image" value="<?php (isset($_POST['image'])) ? $_POST['image'] : '' ?>" class="form-control" id="customFile" />
+                                        </div>
+                                    </div> -->
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Requirements</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="requirements" id="textarea-input" rows="2" placeholder="requirements..." value="<?php (isset($_POST['requirements'])) ? $_POST['requirements'] : '' ?>" class="form-control"></textarea>
                                         </div>
                                     </div>
 

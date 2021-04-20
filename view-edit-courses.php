@@ -53,7 +53,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>View & Edit courses</h1>
+                        <h1>View & edit courses</h1>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
-                            <li class="active">courses data</li>
+                            <li class="active">Courses data</li>
                         </ol>
                     </div>
                 </div>
@@ -76,14 +76,14 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">Data table</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Course ID</th>
-                                            <th>Course Name</th>
+                                            <th>Course id</th>
+                                            <th>Course name</th>
                                             <th>Description</th>
                                              
                                             <th>More action</th>
@@ -100,7 +100,7 @@
                                                         <td>".$data["name"]." </td>
                                                         <td>".$data["description"]."</td>
                                                        
-                                                        <td><a href='course-detailed.php?id=".$data["id"]."'>See More</a></td>
+                                                        <td><a href='course-detailed.php?id=".$data["id"]."'>See more</a></td>
                                                         </tr>"
                                                     ; 
                                                 }

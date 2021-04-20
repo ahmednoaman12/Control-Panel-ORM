@@ -48,7 +48,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>View & Edit Teachers</h1>
+                        <h1>View & edit teachers</h1>
                     </div>
                 </div>
             </div>
@@ -71,14 +71,14 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">Data table</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Teacher ID</th>
-                                            <th>Full name</th>
+                                            <th>Teacher id</th>
+                                            <th>Fullname</th>
                                             <th>Email</th>
                                             
                                             <th>More action</th>

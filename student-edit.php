@@ -97,10 +97,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="card-body">
                                 <form method="post" class="row">
                                     <div class="col-md-6 row align-items-center">
-                                        <span class="col-6">Student ID</span>
+                                        <span class="col-6">Student id</span>
                                         <span class="col-6"><?php echo $userData["id"];
                                         ?></span>
-                                        <label class="col-6" for="name">First name</label>
+                                        <label class="col-6" for="name">Fullname</label>
                                         <input type="text" name="name" id="name" value="<?php echo $userData["name"];
                                         ?>">
 

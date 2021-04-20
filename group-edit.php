@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student Edit</title>
+    <title>Student edit</title>
     <meta name="description" content="student Edit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -98,29 +98,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="card-body">
                                 <form method="post" class="row">
                                     <div class="col-md-6 m-5 row align-items-center">
-                                        <span class="col-6 ">Course ID</span>
+                                        <span class="col-6 ">Course id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
                                         
                                         <label class="col-6 " for="description">Description</label>
                                         <input type="text" name="description" id="description" value="<?php echo $data["description"];?>">
 
-                                        <label class="col-6 " for="max_no_student">Max Number Of Student</label>
+                                        <label class="col-6 " for="max_no_student">Max number of student</label>
                                         <input type="text" name="max_no_student" id="max_no_student" value="<?php echo $data["max_no_student"];?>">
 
-                                        <label class="col-6 " for="start_date">Start Date</label>
+                                        <label class="col-6 " for="start_date">Start date</label>
                                         <input type="date" name="start_date" id="start_date" value="<?php echo $data["start_date"];?>">
 
-                                        <label class="col-6 " for="end_date">End Date</label>
+                                        <label class="col-6 " for="end_date">End date</label>
                                         <input type="date" name="end_date" id="end_date" value="<?php echo $data["end_date"];?>">
 
-                                        <label class="col-6 " for="start_time">Start Time</label>
+                                        <label class="col-6 " for="start_time">Start time</label>
                                         <input type="time" name="start_time" id="start_time" value="<?php echo $data["start_time"];?>">
 
-                                        <label class="col-6 " for="end_time">end_time</label>
+                                        <label class="col-6 " for="end_time">End time</label>
                                         <input type="time" name="end_time" id="end_time" value="<?php echo $data["end_time"];?>">
 
-                                        <label class="col-6 " for="no_lec">Number Of Lectures</label>
+                                        <label class="col-6 " for="no_lec">Number of lectures</label>
                                         <input type="number" name="no_lec" id="no_lec" value="<?php echo $data["no_lec"];?>">
 
                                         <label class="col-6 " for="price">Price</label>

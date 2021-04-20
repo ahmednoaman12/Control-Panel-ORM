@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student Edit</title>
+    <title>Student edit</title>
     <meta name="description" content="student Edit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -98,16 +98,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="card-body">
                                 <form method="post" class="row">
                                     <div class="col-md-6 m-5 row align-items-center">
-                                        <span class="col-6 ">Course ID</span>
+                                        <span class="col-6 ">Course id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
                                         
-                                        <label class="col-6 " for="name">First name</label>
+                                        <label class="col-6 " for="name">Course name</label>
                                         <input type="text" name="name" id="name" value="<?php echo $data["name"];
                                         ?>">
                                         <label class="col-6 " for="description">Description</label>
-                                        <input type="text" name="description" id="description" value="<?php echo $data["description"];
-                                        ?>">
+                                        <textarea type="text" rows="4" cols="35" name="description" id="description"><?php echo $data["description"]; ?></textarea>
                                     </div>
                                   
                                     <span class="col-12 text-right">

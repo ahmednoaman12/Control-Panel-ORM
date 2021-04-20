@@ -67,7 +67,7 @@ $data = $teachers->getUser($_GET["id"]);
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Detailed Teacher info</h1>
+                        <h1>Detailed teacher info</h1>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ $data = $teachers->getUser($_GET["id"]);
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
                             <li><a href="view-edit-teachers.php">Teachers data</a></li>
-                            <li class="active">Detailed Teacher info</li>
+                            <li class="active">Detailed teacher info</li>
                         </ol>
                     </div>
                 </div>
@@ -95,10 +95,10 @@ $data = $teachers->getUser($_GET["id"]);
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12 row">
-                                        <span class="col-4">Teacher ID</span>
+                                        <span class="col-4">Teacher id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
-                                        <span class="col-4"> name</span>
+                                        <span class="col-4"> Fullname</span>
                                         <span class="col-6"><?php echo $data["name"];
                                         ?></span>
                                         

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>View Edit Student</title>
+    <title>View edit student</title>
     <meta name="description" content="View Edit Student">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,7 +50,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>View & Edit students</h1>
+                        <h1>View & edit students</h1>
                     </div>
                 </div>
             </div>
@@ -73,17 +73,17 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">Data table</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Student ID</th>
-                                            <th>Full name</th>
+                                            <th>Student id</th>
+                                            <th>Fullname</th>
                                             <th>Email</th>
                                             <!-- <th>Phone number</th> -->
-                                            <th>actions</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>

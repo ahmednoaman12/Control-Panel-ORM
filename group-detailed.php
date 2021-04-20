@@ -64,7 +64,7 @@ $data = $group->getGroupBytId($_GET["id"]);
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Detailed Group info</h1>
+                        <h1>Detailed group info</h1>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ $data = $group->getGroupBytId($_GET["id"]);
                         <ol class="breadcrumb text-right">
                             <li><a href="index.php">Dashboard</a></li>
                             <li><a href="view-edit-groups.php">Groups data</a></li>
-                            <li class="active">Detailed Groups info</li>
+                            <li class="active">Detailed groups info</li>
                         </ol>
                     </div>
                 </div>
@@ -92,25 +92,25 @@ $data = $group->getGroupBytId($_GET["id"]);
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 row">
-                                        <span class="col-6">Group ID</span>
+                                        <span class="col-6">Group id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
-                                        <span class="col-6">Start Date</span>
+                                        <span class="col-6">Start date</span>
                                         <span class="col-6"><?php echo $data["start_date"];
                                         ?></span>
                                     
-                                        <span class="col-6">End Date</span>
+                                        <span class="col-6">End date</span>
                                         <span class="col-6"><?php echo $data["end_date"];?></span>
                                         
 
-                                        <span class="col-6">Number Of Lectures</span>
+                                        <span class="col-6">Number of lectures</span>
                                         <span class="col-6"><?php echo $data["no_lec"];?></span>  
 
 
-                                        <span class="col-6">Start Time</span>
+                                        <span class="col-6">Start time</span>
                                         <span class="col-6"><?php echo $data["start_time"];?></span>
 
-                                        <span class="col-6">End Time</span>
+                                        <span class="col-6">End time</span>
                                         <span class="col-6"><?php echo $data["end_time"];?></span>
 
                                                                         

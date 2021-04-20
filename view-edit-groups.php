@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>View edit groups</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,17 +78,17 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">Data table</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Group ID</th>
-                                            <th>Group Description</th>
-                                            <th>Group Max Number</th>\
-                                            <th>Group Price</th>
-                                            <th>See More</th>
+                                            <th>Group id</th>
+                                            <th>Group description</th>
+                                            <th>Group max number</th>
+                                            <th>Group price</th>
+                                            <th>See more</th>
                                             <!-- <th>Group Start Date</th>
                                             <th>Group End Date</th>
                                             <th>Group Start Time</th>

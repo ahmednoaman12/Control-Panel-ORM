@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>teacher Edit</title>
+    <title>Teacher edit</title>
     <meta name="description" content="teacher Edit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -97,11 +97,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="card-body">
                                 <form method="post" class="row">
                                     <div class="col-md-6 row align-items-center">
-                                        <span class="col-6">Teacher ID</span>
+                                        <span class="col-6">Teacher id</span>
                                         <span class="col-6"><?php echo $userData["id"];?></span>
 
 
-                                        <label class="col-6" for="name">Full name</label>
+                                        <label class="col-6" for="name">Fullname</label>
                                         <input type="text" name="name" id="name" value="<?php echo $userData["name"];?>">
 
 

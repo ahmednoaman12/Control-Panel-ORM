@@ -18,7 +18,7 @@ $userData = $user->getUser($_GET["id"]);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>student details</title>
+    <title>Student details</title>
     <meta name="description" content="student details">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,10 +92,10 @@ $userData = $user->getUser($_GET["id"]);
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12 row">
-                                        <span class="col-4">Student ID</span>
+                                        <span class="col-4">Student id</span>
                                         <span class="col-8"><?php echo $userData["id"];
                                         ?></span>
-                                        <span class="col-4"> name</span>
+                                        <span class="col-4"> Name</span>
                                         <span class="col-8"><?php echo $userData["name"];
                                         ?></span>
                                         

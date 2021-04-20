@@ -64,7 +64,7 @@ $data = $course->getCourseBytId($_GET["id"]);
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Detailed Course info</h1>
+                        <h1>Detailed course info</h1>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ $data = $course->getCourseBytId($_GET["id"]);
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 row">
-                                        <span class="col-6">Course ID</span>
+                                        <span class="col-6">Course id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
                                         <span class="col-6">Course name</span>
