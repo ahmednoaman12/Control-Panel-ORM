@@ -88,6 +88,8 @@
                                             <th>Group description</th>
                                             <th>Group max number</th>
                                             <th>Group price</th>
+                                            <th>No. of lecture</th>
+                                            <th>language</th>
                                             <th>See more</th>
                                             <!-- <th>Group Start Date</th>
                                             <th>Group End Date</th>
@@ -112,6 +114,8 @@
                                                         <td>".$data["description"]."</td>
                                                         <td>".$data["max_no_student"]."</td>
                                                         <td>".$data["price"]."</td>
+                                                        <td>".$data["no_lec"]."</td>
+                                                        <td>".$data["language"]."</td>
                                                         <td><a href='group-detailed.php?id=".$data["id"]."'>See More</a></td>
                                                         </tr>"
                                                     ; 

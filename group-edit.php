@@ -108,11 +108,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <label class="col-6 " for="max_no_student">Max number of student</label>
                                         <input type="text" name="max_no_student" id="max_no_student" value="<?php echo $data["max_no_student"];?>">
 
+                                        <label class="col-6 " for="price">Price</label>
+                                        <input type="number" name="price" id="price" value="<?php echo $data["price"];?>">
+
+                                        <label class="col-6 " for="no_lec">Number of lectures</label>
+                                        <input type="number" name="no_lec" id="no_lec" value="<?php echo $data["no_lec"];?>">
+                                        
+                                        <label class="col-6 " for="language">Language</label>
+                                        <input type="text" name="language" id="language" value="<?php echo $data["language"];?>">
+
+
                                         <label class="col-6 " for="start_date">Start date</label>
                                         <input type="date" name="start_date" id="start_date" value="<?php echo $data["start_date"];?>">
 
                                         <label class="col-6 " for="end_date">End date</label>
                                         <input type="date" name="end_date" id="end_date" value="<?php echo $data["end_date"];?>">
+
+                                        <label class="col-6 " for="requirements">Requirements</label>
+                                        <input type="text" name="requirements" id="requirements" value="<?php echo $data["requirements"];?>">
 
                                         <label class="col-6 " for="start_time">Start time</label>
                                         <input type="time" name="start_time" id="start_time" value="<?php echo $data["start_time"];?>">
@@ -120,11 +133,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <label class="col-6 " for="end_time">End time</label>
                                         <input type="time" name="end_time" id="end_time" value="<?php echo $data["end_time"];?>">
 
-                                        <label class="col-6 " for="no_lec">Number of lectures</label>
-                                        <input type="number" name="no_lec" id="no_lec" value="<?php echo $data["no_lec"];?>">
+                                        <label class="col-6 " for="briefDescription">Brief description</label>
+                                        <input type="text" name="briefDescription" id="briefDescription" value="<?php echo $data["briefDescription"];?>">
 
-                                        <label class="col-6 " for="price">Price</label>
-                                        <input type="number" name="price" id="price" value="<?php echo $data["price"];?>">
+                                        <label class="col-6 " for="whatLearn">What we learn</label>
+                                        <input type="text" name="whatLearn" id="whatLearn" value="<?php echo $data["whatLearn"];?>">
+
+                                        
+
+                                        
                                     </div>
                                   
                                     <span class="col-12 text-right">

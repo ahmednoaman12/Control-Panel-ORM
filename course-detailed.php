@@ -99,7 +99,9 @@ $data = $course->getCourseBytId($_GET["id"]);
                                         <span class="col-6"><?php echo $data["name"];
                                         ?></span>
 
-                                        <span class="col-6">Description</span>
+                                        <span class="col-6">Image</span>
+                                        <span class="col-6"><?php echo $data["image"];
+                                        ?></span>
 
                                     </div>
                                     <div class="col-md-12 row">

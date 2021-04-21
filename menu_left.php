@@ -18,7 +18,7 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <h3 class="my-2"><a href="../full-mark/index.php">Full Mark</a></h3>
+                <h3 class="my-2"><a href="http://localhost:8000/">Full Mark</a></h3>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">

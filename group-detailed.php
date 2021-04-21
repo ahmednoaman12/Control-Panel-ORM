@@ -95,25 +95,31 @@ $data = $group->getGroupBytId($_GET["id"]);
                                         <span class="col-6">Group id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
+                                        <hr>
                                         <span class="col-6">Start date</span>
                                         <span class="col-6"><?php echo $data["start_date"];
                                         ?></span>
-                                    
+                                        <hr>
                                         <span class="col-6">End date</span>
                                         <span class="col-6"><?php echo $data["end_date"];?></span>
                                         
+                                        <hr>
+                                        <span class="col-6">Requirments</span>
+                                        <span class="col-6"><?php echo $data["requirements"];?></span>  
 
-                                        <span class="col-6">Number of lectures</span>
-                                        <span class="col-6"><?php echo $data["no_lec"];?></span>  
-
-
+                                        <hr>
                                         <span class="col-6">Start time</span>
                                         <span class="col-6"><?php echo $data["start_time"];?></span>
-
+                                        <hr>
                                         <span class="col-6">End time</span>
                                         <span class="col-6"><?php echo $data["end_time"];?></span>
-
-                                                                        
+                                        <hr>
+                                        <span class="col-6">Brief description</span>
+                                        <span class="col-6"><?php echo $data["briefDescription"];?></span>
+                                        <hr>
+                                        <span class="col-6">what we learn</span>
+                                        <span class="col-6"><?php echo $data["whatLearn"];?></span>
+                                              <hr>                          
                                     </div>
                                     
                                     <div class="col-md-12 row">
@@ -129,7 +135,7 @@ $data = $group->getGroupBytId($_GET["id"]);
                                     <span class="col-12 text-right">
                                         <a href="group-edit.php?id=<?php echo $data["id"] ?>"
                                             class="btn btn-warning ml-auto">Edit group</a>
-                                        <a href="group-delete.php?id=<?php echo $data["id"]?>" class=" btn btn-danger">Group course</a>
+                                        <a href="group-delete.php?id=<?php echo $data["id"]?>" class=" btn btn-danger">Delete group </a>
                                     </span>
                                 </div>
                             </div>

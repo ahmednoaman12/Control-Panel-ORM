@@ -83,6 +83,7 @@
                                         <tr>
                                             <th>Course id</th>
                                             <th>Course name</th>
+                                            <th>Course image</th>
                                             <th>More action</th>
                                         </tr>
                                     </thead>
@@ -95,6 +96,7 @@
                                                     echo "<tr>
                                                         <td>".$data["id"]."</td>
                                                         <td>".$data["name"]." </td>
+                                                        <td>".$data["image"]." </td>
                                                         <td><a href='course-detailed.php?id=".$data["id"]."'>See more</a></td>
                                                         </tr>"
                                                     ; 

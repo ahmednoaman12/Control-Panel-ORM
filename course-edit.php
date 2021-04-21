@@ -103,10 +103,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         ?></span>
                                         
                                         <label class="col-6 " for="name">Course name</label>
-                                        <input type="text" name="name" id="name" value="<?php echo $data["name"];
-                                        ?>">
-                                        <label class="col-6 " for="description">Description</label>
-                                        <textarea type="text" rows="4" cols="35" name="description" id="description"><?php echo $data["description"]; ?></textarea>
+                                        <input type="text" name="name" id="name" value="<?php echo $data["name"];              ?>">
+                                        <label class="col-6 " for="image">Image</label>
+                                        <textarea type="text" rows="4" cols="25" name="image" id="image"><?php echo $data["image"]; ?></textarea>
                                     </div>
                                   
                                     <span class="col-12 text-right">
