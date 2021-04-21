@@ -1,4 +1,3 @@
-
 <?php require "./crud/course.php"; ?>
 <!doctype html>
 
@@ -84,13 +83,11 @@
                                         <tr>
                                             <th>Course id</th>
                                             <th>Course name</th>
-                                            <th>Description</th>
-                                             
                                             <th>More action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
+                                        <?php 
                                             $course = new Course();
                                             $All_courses = $course->getAllCourse();
                                             
@@ -98,13 +95,10 @@
                                                     echo "<tr>
                                                         <td>".$data["id"]."</td>
                                                         <td>".$data["name"]." </td>
-                                                        <td>".$data["description"]."</td>
-                                                       
                                                         <td><a href='course-detailed.php?id=".$data["id"]."'>See more</a></td>
                                                         </tr>"
                                                     ; 
                                                 }
-                                            
                                         ?>
                                     </tbody>
                                 </table>

@@ -68,7 +68,7 @@
         </div>
 
         <div class="content mt-3">
-
+            <!-- 
             <div class="col-sm-12">
                 <div class="alert  alert-success alert-dismissible fade show" role="alert">
                     <span class="badge badge-pill badge-success">Success</span> You successfully read this important
@@ -109,7 +109,7 @@
 
                 </div>
             </div>
-            <!--/.col-->
+           
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-2">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+            
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-3">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+    
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-4">
@@ -199,7 +199,7 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
+       
 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box facebook">
@@ -215,10 +215,8 @@
                         </li>
                     </ul>
                 </div>
-                <!--/social-box-->
             </div>
-            <!--/.col-->
-
+         
 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box twitter">
@@ -234,9 +232,7 @@
                         </li>
                     </ul>
                 </div>
-                <!--/social-box-->
             </div>
-            <!--/.col-->
 
 
             <div class="col-lg-3 col-md-6">
@@ -253,11 +249,9 @@
                         </li>
                     </ul>
                 </div>
-                <!--/social-box-->
-            </div>
-            <!--/.col-->
+            </div> -->
 
-
+            <!-- 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box google-plus">
                     <i class="fa fa-google-plus"></i>
@@ -272,9 +266,9 @@
                         </li>
                     </ul>
                 </div>
-                <!--/social-box-->
+            
             </div>
-            <!--/.col-->
+          
 
             <div class="col-xl-6">
                 <div class="card">
@@ -284,7 +278,7 @@
                                 <h4 class="card-title mb-0">Traffic</h4>
                                 <div class="small text-muted">October 2017</div>
                             </div>
-                            <!--/.col-->
+                    
                             <div class="col-sm-8 hidden-sm-down">
                                 <button type="button" class="btn btn-primary float-right bg-flat-color-1"><i
                                         class="fa fa-cloud-download"></i></button>
@@ -303,11 +297,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--/.col-->
+                            
 
 
                         </div>
-                        <!--/.row-->
+                        
                         <div class="chart-wrapper mt-4">
                             <canvas id="trafficChart" style="height:200px;" height="200"></canvas>
                         </div>
@@ -463,14 +457,15 @@
                         <div id="vmap" class="vmap" style="height: 265px;"></div>
                     </div>
                 </div>
-                <!-- /# card -->
-            </div>
+               
+            </div> -->
 
 
-        </div> <!-- .content -->
-    </div><!-- /#right-panel -->
+        </div>
 
-    <!-- Right Panel -->
+    </div>
+
+
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>

@@ -98,13 +98,12 @@ $data = $course->getCourseBytId($_GET["id"]);
                                         <span class="col-6">Course name</span>
                                         <span class="col-6"><?php echo $data["name"];
                                         ?></span>
-                                    
+
                                         <span class="col-6">Description</span>
-                                        <span class="col-6"><?php echo $data["description"];
-                                        ?></span>
+
                                     </div>
                                     <div class="col-md-12 row">
-                                        
+
                                         <span class="col-6">Creation date</span>
                                         <span class="col-6"><?php echo $data["created_at"];
                                         ?></span>
