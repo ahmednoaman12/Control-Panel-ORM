@@ -1,4 +1,8 @@
 <?php require "./crud/user.php";
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 // if(!isset( $_GET["id"])){
 //     echo "Sorry you can't browse this page directly";
 //     die;
@@ -98,13 +102,13 @@ $userData = $user->getUser($_GET["id"]);
                                         <span class="col-4"> Name</span>
                                         <span class="col-8"><?php echo $userData["name"];
                                         ?></span>
-                                        
+
                                         <span class="col-4">Email</span>
                                         <span class="col-8"><?php echo $userData["email"];
                                         ?></span>
                                     </div>
                                     <div class="col-md-12 row">
-                                       
+
                                         <span class="col-6">Creation date</span>
                                         <span class="col-6"><?php echo $userData["created_at"];
                                         ?></span>

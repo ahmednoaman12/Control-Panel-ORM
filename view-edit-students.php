@@ -1,4 +1,7 @@
-<?php require "./crud/user.php"; ?>
+<?php require "./crud/user.php";session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+} ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -87,7 +90,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
+                                        <?php 
                                             $user = new User();
                                             $allUsers = $user->getUsers();
                                             

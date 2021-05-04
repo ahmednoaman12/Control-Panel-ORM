@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 require "./crud/course.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -103,25 +106,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Course name</label>
+                                        <div class="col col-md-3"><label for="text-input"
+                                                class=" form-control-label">Course name</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="text-input" name="name" value="<?php (isset($_POST['name'])) ? $_POST['name'] : '' ?>" placeholder="Course name" class="form-control" required>
+                                            <input type="text" id="text-input" name="name"
+                                                value="<?php (isset($_POST['name'])) ? $_POST['name'] : '' ?>"
+                                                placeholder="Course name" class="form-control" required>
                                         </div>
                                     </div>
 
-                
+
 
 
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Upload image</label>
+                                        <div class="col col-md-3"><label for="text-input"
+                                                class=" form-control-label">Upload image</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="file" name="image" value="<?php (isset($_POST['image'])) ? $_POST['image'] : '' ?>" class="form-control" id="customFile" />
+                                            <input type="file" name="image"
+                                                value="<?php (isset($_POST['image'])) ? $_POST['image'] : '' ?>"
+                                                class="form-control" id="customFile" />
                                         </div>
                                     </div>
 
-                                    
+
 
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">

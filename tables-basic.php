@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -33,7 +40,7 @@
 
 <body>
     <!-- start Left Panel -->
-       <?php
+    <?php
             require "menu_left.php";
        ?>
     <!-- end left-panel -->
@@ -44,10 +51,10 @@
     <div id="right-panel" class="right-panel">
 
         <!-- Start Header-->
-            <?php
+        <?php
                 require "header.php";
             ?>
-      
+
         <!--End Header-->
 
         <div class="breadcrumbs">

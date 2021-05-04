@@ -1,4 +1,8 @@
 <?php require "./crud/course.php";
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 // if(!isset( $_GET["id"])){
 //     echo "Sorry you can't browse this page directly";
 //     die;
@@ -101,13 +105,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <span class="col-6 ">Course id</span>
                                         <span class="col-6"><?php echo $data["id"];
                                         ?></span>
-                                        
+
                                         <label class="col-6 " for="name">Course name</label>
-                                        <input type="text" name="name" id="name" value="<?php echo $data["name"];              ?>">
+                                        <input type="text" name="name" id="name"
+                                            value="<?php echo $data["name"];              ?>">
                                         <label class="col-6 " for="image">Image</label>
-                                        <textarea type="text" rows="4" cols="25" name="image" id="image"><?php echo $data["image"]; ?></textarea>
+                                        <textarea type="text" rows="4" cols="25" name="image"
+                                            id="image"><?php echo $data["image"]; ?></textarea>
                                     </div>
-                                  
+
                                     <span class="col-12 text-right">
                                         <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>

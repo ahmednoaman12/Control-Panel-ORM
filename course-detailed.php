@@ -3,6 +3,10 @@
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 $course = new Course();
 $data = $course->getCourseBytId($_GET["id"]);
 // if ($data === null){

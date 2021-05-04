@@ -3,6 +3,10 @@
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 $user = new User();
 $userData = $user->getUser($_GET["id"]);
 // if ($userData === null){
@@ -102,15 +106,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
                                         <label class="col-6" for="name">Fullname</label>
-                                        <input type="text" name="name" id="name" value="<?php echo $userData["name"];?>">
+                                        <input type="text" name="name" id="name"
+                                            value="<?php echo $userData["name"];?>">
 
 
                                         <label class="col-6" for="email">Email</label>
                                         <input type="email" name="email" id="email" value="<?php echo $userData["email"];
                                         ?>">
-                                        
+
                                     </div>
-                                   
+
                                     <span class="col-12 text-right">
                                         <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>

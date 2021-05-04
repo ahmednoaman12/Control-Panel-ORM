@@ -14,7 +14,13 @@
         <div class="header-menu">
 
             <div class="col-sm-7">
-                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+
+                <div class="d-flex w-100">
+                    <span>Welcome <?php echo $_SESSION['user']['name']?></span>
+                    <a href="logout.php" class="ml-auto">Logout</a>
+                </div>
+                <!-- <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a> -->
+
                 <div class="header-left">
                     <!-- <button class="search-trigger"><i class="fa fa-search"></i></button> -->
                     <!-- <div class="form-inline">
@@ -90,6 +96,7 @@
                             </a>
                         </div>
                     </div> -->
+
                 </div>
             </div>
 

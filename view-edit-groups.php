@@ -1,4 +1,7 @@
-<?php require "./crud/group.php"; ?>
+<?php require "./crud/group.php"; session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -96,14 +99,14 @@
                                             <th>Group Start Time</th>
                                             <th>Group End Time</th>
                                             <th>Group Number Of Lecture</th> -->
-                                            
+
                                             <!-- <th>Creadted At</th>
                                             <th>Updated At</th> -->
-                                           
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
+                                        <?php 
                                             $group = new Group();
                                             $All_groups = $group->getAllGroup();
                                             

@@ -1,4 +1,7 @@
-<?php require "./crud/course.php"; ?>
+<?php require "./crud/course.php";session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+} ?>
 <!doctype html>
 
 <html class="no-js" lang="en">

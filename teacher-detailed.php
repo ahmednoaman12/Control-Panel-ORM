@@ -3,6 +3,10 @@
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 $teachers = new User();
 $data = $teachers->getUser($_GET["id"]);
 
@@ -12,7 +16,7 @@ $data = $teachers->getUser($_GET["id"]);
 // }
 ?>
 
- 
+
 <!doctype html>
 
 <html class="no-js" lang="en">
@@ -101,13 +105,13 @@ $data = $teachers->getUser($_GET["id"]);
                                         <span class="col-4"> Fullname</span>
                                         <span class="col-6"><?php echo $data["name"];
                                         ?></span>
-                                        
+
                                         <span class="col-4">Email</span>
                                         <span class="col-6"><?php echo $data["email"];
                                         ?></span>
                                     </div>
                                     <div class="col-md-12 row">
-                                       
+
                                         <span class="col-4">Creation date</span>
                                         <span class="col-6"><?php echo $data["created_at"];
                                         ?></span>

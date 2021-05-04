@@ -1,4 +1,8 @@
 <?php require "./crud/user.php";
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 // if(!isset( $_GET["id"])){
 //     echo "Sorry you can't browse this page directly";
 //     die;
@@ -104,16 +108,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <input type="text" name="name" id="name" value="<?php echo $userData["name"];
                                         ?>">
 
-                                       
 
-                                    
+
+
                                         <label class="col-6" for="email">Email</label>
                                         <input type="email" name="email" id="email" value="<?php echo $userData["email"];
 
                                         ?>">
-                                        
+
                                     </div>
-                                   
+
                                     <span class="col-12 text-right">
                                         <input type="submit" value="submit" class="btn btn-primary" />
                                     </span>

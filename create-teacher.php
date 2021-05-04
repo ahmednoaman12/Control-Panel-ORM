@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
         require "./crud/user.php";
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
@@ -106,7 +109,7 @@
                                 Add <strong>Teacher</strong>
                             </div>
                             <div class="card-body card-block">
-                            
+
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label class=" form-control-label">Static</label>
@@ -120,19 +123,20 @@
                                                 class=" form-control-label">First Name</label>
                                         </div>
                                         <div class="col-12 col-md-9"><input type="text" id="text-input"
-                                        value="<?php (isset($_POST['name'])) ? $_POST['name']:'' ?>"
-                                                name="name" placeholder="First Name" class="form-control"><small
+                                                value="<?php (isset($_POST['name'])) ? $_POST['name']:'' ?>" name="name"
+                                                placeholder="First Name" class="form-control"><small
                                                 class="form-text text-muted">Please write Full name</small></div>
                                     </div>
 
-                                   
+
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="email-input"
                                                 class=" form-control-label">Email</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="email" id="email-input" value="<?php (isset($_POST['email'])) ? $_POST['email']:'' ?>"
-                                            name="email" placeholder="Enter Email" class="form-control">
+                                            <input type="email" id="email-input"
+                                                value="<?php (isset($_POST['email'])) ? $_POST['email']:'' ?>"
+                                                name="email" placeholder="Enter Email" class="form-control">
                                             <small class="help-block form-text">Please enter your email</small>
                                         </div>
                                     </div>
@@ -141,7 +145,7 @@
                                                 class="form-control-label">Password</label>
                                         </div>
                                         <div class="col-12 col-md-9"><input type="password" id="password-input"
-                                        value="<?php (isset($_POST['password'])) ? $_POST['password']:'' ?>"
+                                                value="<?php (isset($_POST['password'])) ? $_POST['password']:'' ?>"
                                                 name="password" placeholder="Password" class="form-control"><small
                                                 class="help-block form-text">Please
                                                 enter
@@ -152,7 +156,7 @@
                                                 class="form-control-label">Confirm password</label>
                                         </div>
                                         <div class="col-12 col-md-9"><input type="password" id="Confirm-input"
-                                        value="<?php (isset($_POST['confirmPassword'])) ? $_POST['confirmPassword']:'' ?>"
+                                                value="<?php (isset($_POST['confirmPassword'])) ? $_POST['confirmPassword']:'' ?>"
                                                 name="confirmPassword" placeholder="confirm password"
                                                 class="form-control"><small class="help-block form-text">Please
                                                 enter
@@ -164,9 +168,8 @@
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <input type="text" id="disabled-input"
-                                            value="<?php (isset($_POST['mobile'])) ? $_POST['mobile']:'' ?>"
-                                             name="mobile"
-                                                class="form-control">
+                                                value="<?php (isset($_POST['mobile'])) ? $_POST['mobile']:'' ?>"
+                                                name="mobile" class="form-control">
                                         </div>
                                     </div>
 
@@ -175,22 +178,22 @@
                                             <label for="government" class=" form-control-label">Government</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="text-input" 
-                                            value="<?php (isset($_POST['government'])) ? $_POST['government']:'' ?>"
-                                            name="government" class="form-control">
+                                            <input type="text" id="text-input"
+                                                value="<?php (isset($_POST['government'])) ? $_POST['government']:'' ?>"
+                                                name="government" class="form-control">
                                         </div>
                                     </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Submit
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Reset
-                                </button>
-                            </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
                                 </form>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

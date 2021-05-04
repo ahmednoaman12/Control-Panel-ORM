@@ -3,6 +3,10 @@
 //     echo "Sorry you can't browse this page directly";
 //     die;
 // };
+session_start();
+if(!isset($_SESSION['user'])){
+	header('location:login.php');
+}
 $group = new Group();
 $data = $group->getGroupBytId($_GET["id"]);
 // if ($data === null){
@@ -102,10 +106,10 @@ $data = $group->getGroupBytId($_GET["id"]);
                                         <hr>
                                         <span class="col-6">End date</span>
                                         <span class="col-6"><?php echo $data["end_date"];?></span>
-                                        
+
                                         <hr>
                                         <span class="col-6">Requirments</span>
-                                        <span class="col-6"><?php echo $data["requirements"];?></span>  
+                                        <span class="col-6"><?php echo $data["requirements"];?></span>
 
                                         <hr>
                                         <span class="col-6">Start time</span>
@@ -119,11 +123,11 @@ $data = $group->getGroupBytId($_GET["id"]);
                                         <hr>
                                         <span class="col-6">what we learn</span>
                                         <span class="col-6"><?php echo $data["whatLearn"];?></span>
-                                              <hr>                          
+                                        <hr>
                                     </div>
-                                    
+
                                     <div class="col-md-12 row">
-                                    <hr>
+                                        <hr>
                                         <span class="col-6">Creation date</span>
                                         <span class="col-6"><?php echo $data["created_at"];
                                         ?></span>
@@ -135,7 +139,8 @@ $data = $group->getGroupBytId($_GET["id"]);
                                     <span class="col-12 text-right">
                                         <a href="group-edit.php?id=<?php echo $data["id"] ?>"
                                             class="btn btn-warning ml-auto">Edit group</a>
-                                        <a href="group-delete.php?id=<?php echo $data["id"]?>" class=" btn btn-danger">Delete group </a>
+                                        <a href="group-delete.php?id=<?php echo $data["id"]?>"
+                                            class=" btn btn-danger">Delete group </a>
                                     </span>
                                 </div>
                             </div>

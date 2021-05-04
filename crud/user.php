@@ -54,6 +54,10 @@ class  User extends Mysqladapter
         $this ->select($this->_table, " u_fname LIKE '%$keyword%' OR u_email LIKE '%$keyword%' OR u_lname LIKE '%$keyword%' ");
         return $this ->fetchAll();
     }
+    public function loginAdmin($email , $password){
+        $this->select($this->_table, 'email="'.$email.'" and password="'.$password.'" and role="admin"');
+        return $this->fetch();
+    }
 }
 
 
